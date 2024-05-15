@@ -9,7 +9,7 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
 
 # Package dependencies
 install_requires = [
-    "wagtail>=4.1",
+    "wagtail>=5.2",
     "wagtail-font-awesome-svg"
 ]
 
@@ -41,9 +41,10 @@ setup(
         'Framework :: Django :: 3.2',
         'Framework :: Django :: 4.1',
         'Framework :: Django :: 4.2',
+        'Framework :: Django :: 5.0',
         'Framework :: Wagtail',
-        'Framework :: Wagtail :: 4',
         'Framework :: Wagtail :: 5',
+        'Framework :: Wagtail :: 6',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
