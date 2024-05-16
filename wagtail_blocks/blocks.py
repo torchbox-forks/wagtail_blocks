@@ -176,13 +176,19 @@ class ChartBlock(blocks.StructBlock):
     def get_context(self, value, parent_context=None):
         context = super().get_context(value, parent_context=parent_context)
 
-        # Adjusting the shape of the dataset
+        # Adjusting the shape of the dataset and label
         # TODO: Update this accordingly if the ChartBlock changes its shape or if Wagtail has breaking changes
+
         value['datasets'] = json.dumps([
             {
                 "label": child_value["value"]["label"],
                 "dataset_data": [data_item["value"] for data_item in child_value["value"]["dataset_data"]]
             } for child in value['datasets'].bound_blocks if (child_value := child.get_prep_value())
+        ])
+
+        value['labels'] = json.dumps([
+            child_value['value'] for child in value['labels'].bound_blocks
+            if (child_value := child.get_prep_value())
         ])
 
         return context
