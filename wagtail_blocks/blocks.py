@@ -148,9 +148,8 @@ class ChartDataset(blocks.StructBlock):
         default='Dataset #1',
     )
     dataset_data = blocks.ListBlock(
-        blocks.IntegerBlock(),
+        blocks.IntegerBlock(default=0),
         label='Data',
-        default='0',
     )
 
 
